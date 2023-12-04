@@ -1,0 +1,12 @@
+1. 修改 cldm.py model 的架構
+2. 執行
+python tool_add_control_sd21.py \
+./models/v2-1_512-ema-pruned.ckpt ./models/control_se3_ini.ckpt
+
+    將 SD 的 weight 複製到model相對應的 layer
+
+3. 跑code
+    CUDA_VISIBLE_DEVICES=7,8,9 python tutorial_train_sd21.py
+
+inference 
+CUDA_VISIBLE_DEVICES=0 python inference_2img.py
